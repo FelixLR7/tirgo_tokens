@@ -8,7 +8,7 @@ import { readDataFile, updateLineByToken, fileExists } from "./utils.js";
 
 const multerConfig = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Carpeta donde se guarda
+    cb(null, './'); // Carpeta donde se guarda
   },
   filename: function (req, file, cb) {
     // Guarda con el nombre original
