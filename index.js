@@ -4,7 +4,7 @@ import multer from 'multer';
 
 import { config } from './config.js';
 import { verifyToken } from './verify-token.js';
-import { readDataFile, updateLineByToken, fileExists, readFileContent } from "./utils.js";
+import { readDataFile, updateLineByToken, fileExists, readFileContent, deleteFile } from "./utils.js";
 
 const multerConfig = multer.diskStorage({
   destination: function (req, file, cb) {
