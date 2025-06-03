@@ -4,7 +4,7 @@ import multer from 'multer';
 
 import { config } from './config.js';
 import { verifyToken } from './verify-token.js';
-import { readDataFile, updateLineByToken, fileExists } from "./utils.js";
+import { readDataFile, updateLineByToken, fileExists, readFileContent } from "./utils.js";
 
 const multerConfig = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -47,19 +47,14 @@ app.get('/join/:token', async (req, res) => {
     return res.redirect(config.whatsappCommunityUrl);
 });
 
-app.get('/tokensFile', (req, res) => {
-  const contenido = fs.readFileSync(filePath, 'utf8');
-  res.send(`<pre>${contenido}</pre>`);
+app.get('/tokensFile', async (req, res) => {
+  const content = await readFileContent(filePath);
+  res.send(`Contenido del archivo:\n<pre>${content}</pre>`);
 });
 
-app.get('/deleteFile', (req, res) => {
-  fs.unlink(filePath, (err) => {
-    if (err) {
-      console.error('Error al eliminar el archivo:', err);
-    } else {
-      console.log('Archivo eliminado correctamente');
-    }
-  });
+app.get('/deleteFile', async (req, res) => {
+  await deleteFile(filePath);
+  res.send('Archivo eliminado correctamente');
 });
 
 app.listen(config.port, () => {

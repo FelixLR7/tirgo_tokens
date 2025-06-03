@@ -94,3 +94,25 @@ export async function updateLineByToken(filePath, targetToken) {
     });
   }, filePath);
 }
+
+export async function deleteFile(filePath) {
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error('Error al eliminar el archivo:', err);
+    } else {
+      console.log('Archivo eliminado correctamente');
+    }
+  });
+}
+
+export async function readFileContent(filePath) {
+  try {
+    const content = await fs.readFile(filePath, 'utf8');
+
+    return content;   
+  }
+  catch (err) {
+    console.error('Error al leer el archivo:', err);
+    return null;
+  }
+}
