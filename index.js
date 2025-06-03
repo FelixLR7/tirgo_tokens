@@ -49,6 +49,7 @@ app.get('/join/:token', async (req, res) => {
 
 app.get('/tokensFile', async (req, res) => {
   const content = await readFileContent(filePath);
+  console.log('Contenido leído');
   res.send(`Contenido del archivo:\n<pre>${content}</pre>`);
 });
 

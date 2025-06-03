@@ -114,7 +114,7 @@ export async function readFileContent(filePath) {
       return null;
     }
     
-    const content = await fsClassic.readFile(filePath, 'utf8');
+    const content = await fs.readFile(filePath, 'utf8');
 
     return content;   
   }
