@@ -96,7 +96,7 @@ export async function updateLineByToken(filePath, targetToken) {
 }
 
 export async function deleteFile(filePath) {
-  fs.unlink(filePath, (err) => {
+  fsClassic.unlink(filePath, (err) => {
     if (err) {
       console.error('Error al eliminar el archivo:', err);
     } else {
@@ -107,7 +107,7 @@ export async function deleteFile(filePath) {
 
 export async function readFileContent(filePath) {
   try {
-    const content = await fs.readFile(filePath, 'utf8');
+    const content = await fsClassic.readFile(filePath, 'utf8');
 
     return content;   
   }
