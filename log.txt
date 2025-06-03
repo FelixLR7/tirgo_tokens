@@ -1,0 +1,8 @@
+[2025-05-30T15:41:03.541Z] [ERROR] El token usado no existe. El token es 'wfwef'.
+[2025-05-30T15:41:52.377Z] [ERROR] El token usado no existe. El token es 'mWAcRx6fY6e'.
+[2025-05-30T15:42:04.860Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'undefined
+[2025-05-30T15:44:07.003Z] [ERROR] El token usado no existe. El token es 'mWAcRx6fY6ww'.
+[2025-05-30T15:47:26.471Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'undefined'
+[2025-05-30T15:48:51.241Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'undefined'
+[2025-05-30T15:52:08.874Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'Usuario1 Apellido1'
+[2025-05-30T15:56:15.876Z] [ERROR] El token usado no existe. El token es 'mWAcRx6fY6'.
