@@ -17,9 +17,10 @@ const multerConfig = multer.diskStorage({
 });
 const upload = multer({ storage: multerConfig });
 const app = express();
+const filePath = './users.txt';
 
 app.get('/statusTokens', async (req, res) => {
-    const users = await readDataFile('./users.txt');
+    const users = await readDataFile(filePath);
 
     res.send(users);
 })
@@ -31,7 +32,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
 // Endpoint de acceso al enlace ofuscado
 app.get('/join/:token', async (req, res) => {
-    if(!fileExists('./users.txt')) {
+    if(!fileExists(filePath)) {
         return res.status(402).send("Estamos procesando los enlaces que os han llegado. Por favor, inténtalo en unos minutos.");
     }
 
@@ -42,8 +43,23 @@ app.get('/join/:token', async (req, res) => {
         return res.status(404).send("Enlace inválido.");
     }
 
-    await updateLineByToken('./users.txt', token); // Actualizar el estado del token
+    await updateLineByToken(filePath, token); // Actualizar el estado del token
     return res.redirect(config.whatsappCommunityUrl);
+});
+
+app.get('/tokensFile', (req, res) => {
+  const contenido = fs.readFileSync(filePath, 'utf8');
+  res.send(`<pre>${contenido}</pre>`);
+});
+
+app.get('/deleteFile', (req, res) => {
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error('Error al eliminar el archivo:', err);
+    } else {
+      console.log('Archivo eliminado correctamente');
+    }
+  });
 });
 
 app.listen(config.port, () => {
