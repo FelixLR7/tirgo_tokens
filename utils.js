@@ -107,6 +107,13 @@ export async function deleteFile(filePath) {
 
 export async function readFileContent(filePath) {
   try {
+    console.log('Leyendo el archivo:', filePath);
+
+    if (!fileExists(filePath)) {
+      console.error('El archivo no existe:', filePath);
+      return null;
+    }
+    
     const content = await fsClassic.readFile(filePath, 'utf8');
 
     return content;   
