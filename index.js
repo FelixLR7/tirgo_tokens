@@ -33,14 +33,18 @@ app.post('/upload', upload.single('file'), (req, res) => {
 // Endpoint de acceso al enlace ofuscado
 app.get('/join/:token', async (req, res) => {
     if(!fileExists(filePath)) {
-        return res.status(402).send("Estamos procesando los enlaces que os han llegado. Por favor, inténtalo en unos minutos.");
+      const content = await readFileContent('./processing_links.html');
+      console.log('Contenido del archivo de enlaces:', content);
+      return res.status(402).send(content);
     }
 
     const { token } = req.params;
     const verifyResponse = await verifyToken(token);
 
     if (!verifyResponse) {
-        return res.status(404).send("Enlace inválido.");
+      const content = await readFileContent('./invalid_link.html');
+      console.log('Contenido del archivo de enlaces:', content);
+      return res.status(404).send(content);
     }
 
     await updateLineByToken(filePath, token); // Actualizar el estado del token

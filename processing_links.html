@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Procesando enlaces</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #222;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .processing-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 340px;
+      width: 100%;
+    }
+    .processing-icon {
+      font-size: 3.5rem;
+      color: #27ae60;
+      margin-bottom: 1.2rem;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    .processing-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+      color: #2980b9;
+      text-align: center;
+    }
+    .processing-text {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="processing-container">
+    <div class="processing-icon">
+      <i class="fas fa-spinner"></i>
+    </div>
+    <div class="processing-title">
+      Procesando enlaces
+    </div>
+    <div class="processing-text">
+      Estamos procesando los tokens de los enlaces que os han llegado.<br>
+      Por favor, vuelve a intentarlo en unos minutos.
+    </div>
+  </div>
+</body>
+</html>

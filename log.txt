@@ -6,3 +6,6 @@
 [2025-05-30T15:48:51.241Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'undefined'
 [2025-05-30T15:52:08.874Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'mWAcRx6fY6' y pertenece al usuario 'Usuario1 Apellido1'
 [2025-05-30T15:56:15.876Z] [ERROR] El token usado no existe. El token es 'mWAcRx6fY6'.
+[2025-06-10T16:06:24.062Z] [ERROR] El token usado no existe. El token es 'fwjpoiej'.
+[2025-06-10T16:07:27.556Z] [ERROR] El token usado no existe. El token es 'fwjpoiej'.
+[2025-06-10T16:07:44.799Z] [ERROR] Se ha intentado usar un enlace ya usado. El token es 'UlElVTPeVz' y pertenece al usuario 'Felix Lorente'
