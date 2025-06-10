@@ -34,7 +34,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.get('/join/:token', async (req, res) => {
     if(!fileExists(filePath)) {
       const content = await readFileContent('./processing_links.html');
-      console.log('Contenido del archivo de enlaces:', content);
+      
       return res.status(402).send(content);
     }
 
@@ -43,7 +43,7 @@ app.get('/join/:token', async (req, res) => {
 
     if (!verifyResponse) {
       const content = await readFileContent('./invalid_link.html');
-      console.log('Contenido del archivo de enlaces:', content);
+
       return res.status(404).send(content);
     }
 
