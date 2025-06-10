@@ -1,5 +1,5 @@
 export const config = {
     baseUrl: 'localhost',
     port: '3000',
-    whatsappCommunityUrl: 'https://chat.whatsapp.com/Hk3XwZsrNtA0VA4tF7dkRw',
+    whatsappCommunityUrl: 'https://chat.whatsapp.com/JLAp2AiodEA9Fb51iDn4GU',
 }
