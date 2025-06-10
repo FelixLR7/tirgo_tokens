@@ -34,7 +34,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.get('/join/:token', async (req, res) => {
     if(!fileExists(filePath)) {
       const content = await readFileContent('./processing_links.html');
-      
+
       return res.status(402).send(content);
     }
 
@@ -53,7 +53,7 @@ app.get('/join/:token', async (req, res) => {
 
 app.get('/tokensFile', async (req, res) => {
   const content = await readFileContent(filePath);
-  console.log('Contenido leído');
+  
   res.send(`Contenido del archivo:\n<pre>${content}</pre>`);
 });
 

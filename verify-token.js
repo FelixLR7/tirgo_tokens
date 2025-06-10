@@ -10,8 +10,6 @@ export async function verifyToken(token) {
         return false;
     }
 
-    console.log(`Entry: ${entry}`);
-    
     if (entry.used === 'true') {
         log(`Se ha intentado usar un enlace ya usado. El token es '${token}' y pertenece al usuario '${entry.username}'`, 'error')
         return false;
